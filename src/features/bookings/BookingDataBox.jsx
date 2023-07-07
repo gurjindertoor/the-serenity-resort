@@ -1,12 +1,13 @@
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { format, isToday } from "date-fns";
 import {
   HiOutlineChatBubbleBottomCenterText,
   HiOutlineCheckCircle,
   HiOutlineCurrencyDollar,
   HiOutlineHomeModern,
 } from "react-icons/hi2";
-
+import { format, isToday } from "date-fns";
 import DataItem from "../../ui/DataItem";
 import { Flag } from "../../ui/Flag";
 
@@ -101,7 +102,6 @@ const Footer = styled.footer`
   text-align: right;
 `;
 
-// A purely presentational component
 function BookingDataBox({ booking }) {
   const {
     created_at,
@@ -183,5 +183,31 @@ function BookingDataBox({ booking }) {
     </StyledBookingDataBox>
   );
 }
+
+BookingDataBox.propTypes = {
+  booking: PropTypes.shape({
+    created_at: PropTypes.string.isRequired,
+    startDate: PropTypes.string.isRequired,
+    endDate: PropTypes.string.isRequired,
+    numNights: PropTypes.number.isRequired,
+    numGuests: PropTypes.number.isRequired,
+    cabinPrice: PropTypes.number.isRequired,
+    extrasPrice: PropTypes.number.isRequired,
+    totalPrice: PropTypes.number.isRequired,
+    hasBreakfast: PropTypes.bool.isRequired,
+    observations: PropTypes.string,
+    isPaid: PropTypes.bool.isRequired,
+    guests: PropTypes.shape({
+      fullName: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+      countryFlag: PropTypes.string,
+      nationalID: PropTypes.string.isRequired,
+    }).isRequired,
+    cabins: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default BookingDataBox;
