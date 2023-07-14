@@ -1,4 +1,5 @@
-# The Wild Oasis Web Application
+# The Serenity Resort Web Application
+[Demo Clips](#Demo Clips)
 
 ## Table of Contents
 
@@ -30,3 +31,8 @@
 ## Contribution
 
 If you encounter any issues or have suggestions for improvements, feel free to open an issue or make a pull request. Your contribution is highly appreciated!
+
+## Demo Clips
+
+https://github.com/gurjindertoor/the-serenity-resort/assets/78512847/83a33473-5f84-4015-843e-a7ea6f269c63
+
